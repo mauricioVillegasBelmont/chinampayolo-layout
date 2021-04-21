@@ -1,0 +1,111 @@
+
+@mixin width-heigth-utility($start,$step,$important:false){
+  $width: $start;
+  $addImportant: if($important, ' !important','');
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    @while $width <= 100 {
+      @if ($breakpoint-value == 0) {
+        .w-#{$width}{
+          width: #{$width + '%' + $addImportant};
+        }
+      } @else {
+        @include media-breakpoint-up($breakpoint-name){
+          .w-#{$breakpoint-name}-#{$width}{
+            width: #{$width + '%' + $addImportant};
+          }
+        }
+      }
+      $width: $width + $step;
+    }
+  }
+  $height: $start;
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    @while $height <= 100 {
+      @if ($breakpoint-value == 0) {
+        .h-#{$height}{
+          height: #{$height + '%' + $addImportant};
+        }
+      } @else {
+        @include media-breakpoint-up($breakpoint-name){
+          .h-#{$breakpoint-name}-#{$height}{
+            height: #{$height + '%' + $addImportant};
+          }
+        }
+      }
+      $height: $height + $step;
+    }
+    $height: $start;
+  }
+}
+
+@mixin utility_query_generator($prefix,$property-name,$property-arr,$important:false){
+  $addImportant: if($important, ' !important','');
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    @each $arr-value in $property-arr {
+      @if ($breakpoint-value == 0) {
+
+        .#{$prefix}-#{$arr-value}{
+          #{$property-name}: $arr-value + $addImportant;
+        }
+
+      } @else {
+
+        @include media-breakpoint-up($breakpoint-name){
+          .#{$prefix}-#{$breakpoint-name}-#{$arr-value}{
+            #{$property-name}: $arr-value + $addImportant;
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+@mixin utility_query_generator_2($prefix,$sufix,$property-name,$property-arr,$important:false){
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    @each $arr-value in $property-arr {
+      $addImportant: if($important, ' !important','');
+      @if ($breakpoint-value == 0) {
+        .#{$prefix}-#{$sufix}{
+          #{$property-name}: $arr-value + $addImportant;
+        }
+      } @else {
+        @include media-breakpoint-up($breakpoint-name){
+          .#{$prefix}-#{$breakpoint-name}-#{$sufix}{
+            #{$property-name}: $arr-value + $addImportant;
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+@mixin float_query_generator($prefix,$margin,$property-arr,$important:false){
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    $addImportant: if($important, ' !important','');
+    $margin-direction:'';
+    @each $arr-value in $property-arr {
+      @if ($arr-value == left){$margin-direction:'right'}@else{$margin-direction:'left'}
+      @if ($breakpoint-value == 0) {
+        .#{$prefix}-#{$arr-value}{
+          float: $arr-value + $addImportant;
+          margin-#{$margin-direction}: $margin;
+        }
+      } @else {
+        @include media-breakpoint-up($breakpoint-name){
+          .#{$prefix}-#{$breakpoint-name}-#{$arr-value}{
+            float: $arr-value + $addImportant;
+            margin-#{$margin-direction}: $margin;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin utility_counter_generator($prefix,$property-name,$property-arr){
+
+}

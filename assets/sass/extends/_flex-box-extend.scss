@@ -1,0 +1,82 @@
+%justify-center{
+  @include justify-content(center);
+}
+%justify-between{
+  @include justify-content(space-between);
+}
+%justify-around{
+  @include justify-content(space-around);
+}
+%justify-end{
+  @include justify-content(flex-end);
+}
+%justify-start{
+  @include justify-content(flex-start);
+}
+%align-center{
+  @include align-items(center);
+}
+%align-end{
+  @include align-items(flex-end);
+}
+%align-start{
+  @include align-items(flex-start);
+}
+%align-stretch{
+  @include align-items(stretch);
+}
+%flex-column{
+  @include flex-direction(column);
+}
+%flex-row{
+  @include flex-direction(row);
+}
+%flex-wrap{
+  @include flex-wrap(wrap);
+}
+%flex-no-wrap{
+  @include flex-wrap(nowrap);
+}
+@each $breakpoint-name, $breakpoint-value in $breakpoints{
+  @include media-breakpoint-up($breakpoint-name){
+    %justify-center-#{$breakpoint-name}{
+      @include justify-content(center);
+    }
+    %justify-between-#{$breakpoint-name}{
+      @include justify-content(space-between);
+    }
+    %justify-around-#{$breakpoint-name}{
+      @include justify-content(space-around);
+    }
+    %justify-end-#{$breakpoint-name}{
+      @include justify-content(flex-end);
+    }
+    %justify-start-#{$breakpoint-name}{
+      @include justify-content(flex-start);
+    }
+    %align-center-#{$breakpoint-name}{
+      @include align-items(center);
+    }
+    %align-end-#{$breakpoint-name}{
+      @include align-items(flex-end);
+    }
+    %align-start-#{$breakpoint-name}{
+      @include align-items(flex-start);
+    }
+    %align-stretch-#{$breakpoint-name}{
+      @include align-items(stretch);
+    }
+    %flex-column-#{$breakpoint-name}{
+      @include flex-direction(column);
+    }
+    %flex-row-#{$breakpoint-name}{
+      @include flex-direction(row);
+    }
+    %flex-wrap-#{$breakpoint-name}{
+      @include flex-wrap(wrap);
+    }
+    %flex-no-wrap-#{$breakpoint-name}{
+      @include flex-wrap(nowrap);
+    }
+  }
+}

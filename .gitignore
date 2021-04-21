@@ -1,0 +1,84 @@
+#Upload files
+assets/images/uploads/*
+/imagen_nota/*
+!/imagen_nota/README
+/imagesPosts/*
+!/imagesPosts/README
+/addons/*
+!/addons/README
+assets/images/sponsors/note/*
+
+#Config File Local
+/config/app.ini
+/config/db.ini
+*.back
+*.back.*
+*.map
+*.map.*
+*.test
+*.test.*
+*.old
+*.old.*
+
+#analytics plugin
+
+common_files/plugins/analytics_visitcounter/registers/*
+!common_files/plugins/analytics_visitcounter/registers/README
+
+
+#CodeKit
+config.codekit
+.codekit-cache/*
+.sass-cache/*
+*/.codekit-cache
+*/.sass-cache
+*/config.codekit
+config.rb
+
+# OS generated files #
+######################
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.*
+!.gitignore
+/.htaccess
+/.htpasswd
+*~
+
+# Mac OS X
+*/.DS_Store
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+#NETBEANS
+/nbproject/*
+
+#LOGS
+*.log
+
+#NEWPANEL
+/panel/*
+
+#SSL
+/.well-known/*
+
+
+#SITEMAP
+/sitemapnews.xml
+/sitemap.xml
+
+#editable design files
+*.psd
+*.ai

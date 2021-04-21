@@ -1,0 +1,9 @@
+@function color_var($k){
+  $color: #000;
+  @if $root_colors{
+    $color: var(--c_#{$k});
+  }@else{
+    $color: map-get($color_list, #{$k});
+  }
+  @return $color;
+}

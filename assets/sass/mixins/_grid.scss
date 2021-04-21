@@ -1,0 +1,66 @@
+@mixin display-grid() {
+  display:-ms-grid;
+  display:grid;
+}
+
+@mixin grid-template-columns($values){
+  -ms-grid-template-columns:$values;
+  grid-template-columns:$values;
+}
+
+@mixin grid-template-rows($values){
+  -ms-grid-template-rows:$values;
+  grid-template-rows:$values;
+}
+
+@mixin grid-column-gap($values){
+  -ms-grid-column-gap:$values;
+  grid-column-gap:$values;
+}
+
+@mixin grid-row-gap($values){
+  -ms-grid-row-gap:$values;
+  grid-row-gap:$values;
+}
+
+@mixin grid-gap($values){
+  -ms-grid-gap:$values;
+  grid-gap:$values;
+}
+
+@mixin grid-column-start($values){
+  -ms-grid-column-start:$values;
+  grid-column-start:$values;
+}
+
+@mixin grid-column-end($values){
+  -ms-grid-column-end:$values;
+  grid-column-end:$values;
+}
+
+@mixin grid-row-start($values){
+  -ms-grid-row-start:$values;
+  grid-row-start:$values;
+}
+
+@mixin grid-row-end($values){
+  -ms-grid-row-end:$values;
+  grid-row-endt:$values;
+}
+
+@mixin grid($values){
+  -ms-grid:$values;
+  grid:$values;
+}
+@mixin grid-auto-flow($values){
+  -ms-grid-auto-flow:$values;
+  grid-auto-flow:$values;
+}
+@mixin grid-auto-columns($values){
+  -ms-grid-auto-columns:$values;
+  grid-auto-columns:$values;
+}
+@mixin grid-auto-row($values){
+  -ms-grid-auto-row:$values;
+  grid-auto-row:$values;
+}

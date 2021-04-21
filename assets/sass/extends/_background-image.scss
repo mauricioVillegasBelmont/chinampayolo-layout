@@ -1,0 +1,87 @@
+%background-no-repeat{
+  background-repeat: no-repeat;
+}
+%background-repeat{
+  background-repeat: repeat;
+}
+%background-cover{
+  background-size: cover;
+}
+%background-contain{
+  background-size: contain;
+}
+%background-top{
+  background-position: top;
+}
+%background-bottom{
+  background-position: bottom;
+}
+%background-center{
+  background-position: center;
+}
+%background-left{
+  background-position: left;
+}
+%background-right{
+  background-position: right;
+}
+%background-fixed{
+  background-attachment: fixed;
+}
+%background-center-icon{
+  @extend %background-no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+%background-center-cover{
+  @extend %background-no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+%background-center-top-cover{
+  @extend %background-no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+%background-center-top-contain{
+  @extend %background-no-repeat;
+  background-size: contain;
+  background-position: center top;
+}
+%background-center-top-cover{
+  @extend %background-no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+%background-bottom-cover{
+  @extend %background-no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+%background-center-contain{
+  @extend %background-no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+%background-bottom-contain{
+  @extend %background-no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+}
+%background-horizontal-tile{
+  @extend %background-no-repeat;
+  background-size: auto 100%;
+}
+
+%background-button{
+  @extend %background-no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+  @include  hover(){
+    background-position: bottom;
+  }
+  @include active(){
+    background-position: bottom;
+  }
+}

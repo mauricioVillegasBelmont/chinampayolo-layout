@@ -1,0 +1,50 @@
+%width-auto{
+  width: auto;
+}
+%height-auto{
+  height: auto;
+}
+@each $breakpoint-name, $breakpoint-value in $breakpoints{
+  @include media-breakpoint-up($breakpoint-name){
+    %width-auto-#{$breakpoint-name}{
+      width: auto;
+    }
+    %height-auto-#{$breakpoint-name}{
+      height: auto;
+    }
+  }
+}
+
+
+@for $i from 1 through 10 {
+  %width-#{10 * $i}{
+    width: $i * 10%;
+  }
+  %max-width-#{10 * $i}{
+    max-width: $i * 10%;
+  }
+  %height-#{10 * $i}{
+    height: $i * 10%;
+  }
+  %max-height-#{10 * $i}{
+    max-height: $i * 10%;
+  }
+}
+@each $breakpoint-name, $breakpoint-value in $breakpoints{
+  @include media-breakpoint-up($breakpoint-name){
+    @for $i from 1 through 10 {
+      %width-#{$i * 10}-#{$breakpoint-name}{
+        width: $i * 10%;
+      }
+      %max-width-#{$i * 10}-#{$breakpoint-name}{
+        max-width: $i * 10%;
+      }
+      %height-#{$i * 10}-#{$breakpoint-name}{
+        width: $i * 10%;
+      }
+      %max-height-#{$i * 10}-#{$breakpoint-name}{
+        max-height: $i * 10%;
+      }
+    }
+  }
+}

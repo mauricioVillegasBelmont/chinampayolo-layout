@@ -1,0 +1,12 @@
+@each $zindex-name, $zindex-value in $zindex_values{
+  %zindex-#{$zindex-name}{
+    z-index: $zindex-value;
+  }
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    @include media-breakpoint-up($breakpoint-name){
+      %zindex-#{$zindex-name}-#{$breakpoint-name}{
+        z-index: $zindex-value;
+      }
+    }
+  }
+}

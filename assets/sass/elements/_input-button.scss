@@ -1,0 +1,25 @@
+.btn {
+  @extend %position-relative;
+  @extend %display-block;
+  text-align: center;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  img,svg{
+    width: 100%;
+    height: auto;
+  }
+}
+.main_nav_btn{
+  background-color: color_var('base_green');
+  padding: .5rem;
+  width: 2.25rem;
+  @include media-breakpoint-up(lg){
+    width: 3rem;
+  }
+}
+.nav_open{
+  margin: 0;
+  height: 100%;
+}

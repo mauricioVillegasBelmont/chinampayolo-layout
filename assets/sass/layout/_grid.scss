@@ -1,0 +1,44 @@
+.container-fluid{
+  @extend %display-block;
+  @extend %margin-0-auto;
+  width: 100%;
+  max-width: 100%;
+}
+.container{
+  @extend %position-relative;
+  @extend %display-block;
+  @extend %width-100;
+  @extend %margin-0-auto;
+  @include media-breakpoint-up(xx){
+    max-width: 1220px;
+  }
+  &-body{
+    @extend %position-relative;
+    @extend %display-block;
+    @extend %width-100;
+    @extend %margin-0-auto;
+    @include media-breakpoint-up(lg){
+      max-width: 920px;
+    }
+    @include media-breakpoint-up(xx){
+      max-width: 1024px;
+    }
+
+  }
+}
+
+.row{
+  @extend %display-flex;
+  @extend %flex-row;
+  @extend %flex-wrap;
+}
+
+%grid-column {
+  padding-right: .75rem;
+  padding-left:  .75rem;
+  @include media-breakpoint-up(lg){
+    padding-right: 1.25rem;
+    padding-left:  1.25rem;
+  }
+}
+@include column-grid-generator($breakpoints, 12);
