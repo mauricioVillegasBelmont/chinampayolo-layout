@@ -1,0 +1,38 @@
+// top,right,bottom,left extends
+%top-0{top: 0;}
+%top-auto{top: auto;}
+%left-0{left: 0;}
+%left-auto{left: auto;}
+%bottom-0{bottom: 0;}
+%bottom-auto{bottom: auto;}
+%right-0{right: 0;}
+%right-auto{right: auto;}
+
+%trbl-0{
+  @extend %top-0;
+  @extend %left-0;
+  @extend %bottom-0;
+  @extend %right-0;
+}
+%trbl-auto{
+  @extend %top-auto;
+  @extend %left-auto;
+  @extend %bottom-auto;
+  @extend %right-auto;
+}
+%tb-0{
+  @extend %top-0;
+  @extend %bottom-0;
+}
+%tb-auto{
+  @extend %top-auto;
+  @extend %bottom-auto;
+}
+%rl-0{
+  @extend %left-0;
+  @extend %right-0;
+}
+%rl-auto{
+  @extend %left-auto;
+  @extend %right-auto;
+}

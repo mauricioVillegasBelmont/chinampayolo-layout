@@ -1,0 +1,47 @@
+#main_nav{
+  .nav_header{
+    @extend %display-flex;
+    @extend %align-center;
+    margin-bottom: .5rem;
+    background-color: color_var('deep_blue');
+    h1{
+      color: color_var('white');
+      margin: 0 .5rem 0 auto;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+  }
+  .nav_list{
+    li{
+      @extend %position-relative;
+      padding: .75rem 2rem .75rem .5rem;
+      color: color_var('deep_blue');
+      &::after{
+        @extend %position-absolute;
+        @extend %background-no-repeat;
+        @extend %background-center;
+        @extend %background-contain;
+      }
+      @include hover(){
+        color: color_var('base_green');
+        &::after{
+          content: '';
+          width: 1rem;
+          height: 1.5rem;
+          top: .25rem;
+          bottom: .25rem;
+          right: .25rem;
+          left: auto;
+          margin: auto;
+          background-image: url('../img/index/bullet.svg');
+        }
+      }
+      & + li{
+        border-top: 1px dotted color_var('light_grey');
+      }
+      a{
+        color: inherit;
+      }
+    }
+  }
+}

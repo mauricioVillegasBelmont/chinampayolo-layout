@@ -1,0 +1,11 @@
+
+body{
+  background-color: color_var('base_white');
+  img,svg{
+    @extend %display-block;
+    @extend %width-100;
+  }
+  &, & *{
+    font-family: 'Quicksand', sans-serif;
+  }
+}

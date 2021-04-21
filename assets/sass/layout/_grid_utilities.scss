@@ -1,0 +1,218 @@
+$position_utilities: false !default;
+// utitlities
+@if $position_utilities {
+  .p-relative{
+    @extend %position-relative;
+  }
+  .p-absolute{
+    @extend %position-absolute;
+  }
+  .p-fixed{
+    @extend %position-fixed;
+  }
+  .p-stiky{
+    @extend %position-sticky;
+  }
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    @include media-breakpoint-up($breakpoint-name){
+      .p-#{$breakpoint-name}-relative{
+        @extend %position-relative-#{$breakpoint-name};
+      }
+      .p-#{$breakpoint-name}-absolute{
+        @extend %position-absolute-#{$breakpoint-name};
+      }
+      .p-#{$breakpoint-name}-fixed{
+        @extend %position-fixed-#{$breakpoint-name};
+      }
+      .p-#{$breakpoint-name}-stiky{
+        @extend %position-sticky-#{$breakpoint-name};
+      }
+    }
+  }
+}
+
+$display_utilities: false !default;
+@if $display_utilities{
+  .d-block{
+    @extend %display-block;
+  }
+  .d-none{
+    @extend %display-none;
+  }
+  .d-inline{
+    @extend %display-inline;
+  }
+  .d-inline-block{
+    @extend %display-inline-block;
+  }
+  .d-gird{
+    @extend %display-grid;
+  }
+  .d-flex{
+    @extend %display-flex;
+  }
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    @include media-breakpoint-up($breakpoint-name){
+      .d-#{$breakpoint-name}-block{
+        @extend %display-block-#{$breakpoint-name};
+      }
+      .d-#{$breakpoint-name}-none{
+        @extend %display-none-#{$breakpoint-name};
+      }
+      .d-#{$breakpoint-name}-inline{
+        @extend %display-inline-#{$breakpoint-name};
+      }
+      .d-#{$breakpoint-name}-inline-block{
+        @extend %display-inline-block-#{$breakpoint-name};
+      }
+      .d-#{$breakpoint-name}-gird{
+        @extend %display-grid-#{$breakpoint-name};
+      }
+      .d-#{$breakpoint-name}-flex{
+        @extend %display-flex-#{$breakpoint-name};
+      }
+    }
+  }
+}
+
+$flex_utilities: false !default;
+@if $flex_utilities {
+  .justify-center{
+    @extend %justify-center;
+  }
+  .justify-between{
+    @extend %justify-between;
+  }
+  .justify-around{
+    @extend %justify-around;
+  }
+  .justify-end{
+    @extend %justify-end;
+  }
+  .justify-start{
+    @extend %justify-start;
+  }
+  .align-center{
+    @extend %align-center;
+  }
+  .align-end{
+    @extend %align-end;
+  }
+  .align-start{
+    @extend %align-start;
+  }
+  .align-stretch{
+    @extend %align-stretch;
+  }
+  .flex-column{
+    @extend %flex-column;
+  }
+  .flex-row{
+    @extend %flex-row;
+  }
+  .flex-wrap{
+    @extend %flex-wrap;
+  }
+  .flex-nowrap{
+    @extend %flex-no-wrap;
+  }
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    @include media-breakpoint-up($breakpoint-name){
+      .justify-#{$breakpoint-name}-center{
+        @extend %justify-center-#{$breakpoint-name};
+      }
+      .justify-#{$breakpoint-name}-between{
+        @extend %justify-between-#{$breakpoint-name};
+      }
+      .justify-#{$breakpoint-name}-around{
+        @extend %justify-around-#{$breakpoint-name};
+      }
+      .justify-#{$breakpoint-name}-end{
+        @extend %justify-end-#{$breakpoint-name};
+      }
+      .justify-#{$breakpoint-name}-start{
+        @extend %justify-start-#{$breakpoint-name};
+      }
+      .align-#{$breakpoint-name}-center{
+        @extend %align-center-#{$breakpoint-name};
+      }
+      .align-#{$breakpoint-name}-end{
+        @extend %align-end-#{$breakpoint-name};
+      }
+      .align-#{$breakpoint-name}-start{
+        @extend %align-start-#{$breakpoint-name};
+      }
+      .align-#{$breakpoint-name}-stretch{
+        @extend %align-stretch-#{$breakpoint-name};
+      }
+      .flex-#{$breakpoint-name}-column{
+        @extend %flex-column-#{$breakpoint-name};
+      }
+      .flex-#{$breakpoint-name}-row{
+        @extend %flex-row-#{$breakpoint-name};
+      }
+      .flex-#{$breakpoint-name}-wrap{
+        @extend %flex-wrap-#{$breakpoint-name};
+      }
+      .flex-#{$breakpoint-name}-nowrap{
+        @extend %flex-no-wrap-#{$breakpoint-name};
+      }
+    }
+  }
+}
+
+$width_utilities: false !default;
+@if $width_utilities{
+  @for $i from 1 through 10 {
+    .w-#{10 * $i}{
+      @extend %width-#{10 * $i};
+    }
+    .mw-#{10 * $i}{
+      @extend %max-width-#{10 * $i};
+    }
+    .h-#{10 * $i}{
+      @extend %height-#{10 * $i};
+    }
+    .mh-#{10 * $i}{
+      @extend %max-height-#{10 * $i};
+    }
+  }
+
+  @each $breakpoint-name, $breakpoint-value in $breakpoints{
+    @include media-breakpoint-up($breakpoint-name){
+      @for $i from 1 through 10{
+        .w-#{10 * $i}-#{$breakpoint-name}{
+          @extend %width-#{$i * 10}-#{$breakpoint-name};
+        }
+        .mw-#{10 * $i}-#{$breakpoint-name}{
+          @extend %max-width-#{$i * 10}-#{$breakpoint-name};
+        }
+        .h-#{10 * $i}-#{$breakpoint-name}{
+          @extend %height-#{$i * 10}-#{$breakpoint-name};
+        }
+        .mh-#{10 * $i}-#{$breakpoint-name}{
+          @extend %max-height-#{$i * 10}-#{$breakpoint-name};
+        }
+      }
+    }
+  }
+}
+
+$zindex_utilities: false !default;
+@if $zindex_utilities{
+  @each $zindex-name, $zindex-value in $breakpoints{
+    .z-#{$zindex-name}{
+      @extend %zindex-#{$zindex-name};
+    }
+
+    @each $breakpoint-name, $breakpoint-value in $breakpoints{
+      @include media-breakpoint-up($breakpoint-name){
+        @for $i from 1 through 10{
+          .z-#{$breakpoint-name}-#{$zindex-name}{
+            @extend %zindex-#{$zindex-name}-#{$breakpoint-name};
+          }
+        }
+      }
+    }
+  }
+}

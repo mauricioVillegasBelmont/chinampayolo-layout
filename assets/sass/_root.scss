@@ -1,0 +1,7 @@
+@if $root_colors{
+  :root{
+    @each $key, $value in $color_list {
+      --c_#{$key} : #{$value};
+    }
+  }
+}

@@ -1,0 +1,72 @@
+// position
+%position-relative{
+  position: relative;
+}
+%position-absolute{
+  position: absolute;
+}
+%position-fixed{
+  position: fixed;
+}
+%position-sticky{
+  position: -webkit-sticky;
+  position: -ms-sticky;
+  position: sticky;
+}
+// display
+%display-block{
+  display: block;
+}
+%display-none{
+  display: none;
+}
+%display-inline{
+  display: inline;
+}
+%display-inline-block{
+  display: inline-block;
+}
+%display-grid{
+  display: grid;
+}
+%display-flex{
+  @include flexbox();
+}
+@each $breakpoint-name, $breakpoint-value in $breakpoints{
+  @include media-breakpoint-up($breakpoint-name){
+    // position
+    %position-relative-#{$breakpoint-name}{
+      position: relative;
+    }
+    %position-absolute-#{$breakpoint-name}{
+      position: absolute;
+    }
+    %position-fixed-#{$breakpoint-name}{
+      position: fixed;
+    }
+    %position-sticky-#{$breakpoint-name}{
+      position: -webkit-sticky;
+      position: -ms-sticky;
+      position: sticky;
+    }
+    // display
+    %display-block-#{$breakpoint-name}{
+      display: block;
+    }
+    %display-none-#{$breakpoint-name}{
+      display: none;
+    }
+    %display-inline-#{$breakpoint-name}{
+      display: inline;
+    }
+    %display-inline-block-#{$breakpoint-name}{
+      display: inline-block;
+    }
+    %display-grid-#{$breakpoint-name}{
+      display: grid;
+    }
+    %display-flex-#{$breakpoint-name}{
+      @include flexbox();
+    }
+  }
+}
