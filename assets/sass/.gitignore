@@ -1,0 +1,33 @@
+#CodeKit
+config.codekit
+.codekit-cache/*
+.sass-cache/*
+*/.codekit-cache
+*/.sass-cache
+*/config.codekit
+config.rb
+
+# OS generated files #
+######################
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.*
+!.gitignore
+/.htaccess
+/.htpasswd
+*~
+
+#Exclude file types
+*.back
+*.test
+*.old
+*.back.*
+*.test.*
+*.old.*
+css

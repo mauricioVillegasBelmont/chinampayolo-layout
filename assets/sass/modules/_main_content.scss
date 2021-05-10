@@ -71,7 +71,32 @@
   }
 }
 .main_content{
+  @extend %position-relative;
   margin-bottom: 10vh;
+  .sticky_sm{
+    top: 0;
+    right: 0;
+    left: auto;
+    height: 100%;
+    transform: translateX( calc(100% + .5rem));
+    &_wrapper{
+      top: calc(2.25rem + .25rem);
+      @include media-breakpoint-up(lg){
+        top: calc(3rem + .5rem);
+      }
+      max-width: 1.5rem;
+      @include media-breakpoint-up(lg){
+        max-width: 2.5rem;
+      }
+      a{
+        @extend %sm_btn;
+        margin-bottom: .5rem;
+      }
+    }
+  }
+  .mapa{
+
+  }
 }
 .text_content{
   @extend %position-relative;
@@ -185,11 +210,19 @@
   .location_map{
     @extend %position-relative;
     @extend %display-block;
+    @include aspect-ratio(5, 3);
+    .mapa{
+      @extend %position-absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
     .data-desktop{
       @extend %position-absolute;
       z-index: 1;
       top:1rem;
-      right: 1rem;
+      left: 1rem;
       max-width: 38%;
     }
   }
