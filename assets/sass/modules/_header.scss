@@ -17,4 +17,20 @@
       height: 3rem;
     }
   }
+  &_sm_wrapper{
+    margin-left: auto;
+    width: 150px;
+    max-width: 50vw;
+    max-height: 100%;
+    padding: .25rem .5rem;
+    // @include media-breakpoint-up(lg){
+    //   width: 200px;
+    // }
+    a{
+      max-width: 1.5rem;
+      @include media-breakpoint-up(lg){
+        max-width: 2.5rem;
+      }
+    }
+  }
 }
