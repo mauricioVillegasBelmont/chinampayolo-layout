@@ -1,0 +1,24 @@
+.main-pages-footer{
+  @extend %position-fixed;
+  @extend %top-auto;
+  @extend %left-auto;
+  @extend %bottom-0;
+  @extend %right-0;
+  margin: auto .75rem calc(.75rem + 28px) auto;
+  @include media-breakpoint-up(lg){
+    margin: auto .75rem .75rem auto;
+  }
+  .sm-item{
+    width:  25px;
+    height: 25px;
+    margin-top: .5rem;
+    opacity: .5;
+    @include hover(){
+      opacity: 1;
+    }
+    @include media-breakpoint-up(lg){
+      margin-top: 0;
+      margin-left: .5rem;
+    }
+  }
+}

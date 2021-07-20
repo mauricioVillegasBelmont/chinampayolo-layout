@@ -9,6 +9,7 @@
   <link rel="preload" as="style" onload="this.rel='stylesheet'" href="./assets/css/pushbar.css">
   <link rel="preload" as="style" onload="this.rel='stylesheet'" href="./assets/css/chinampayolo.css">
   <link rel="preload" as="style" onload="this.rel='stylesheet'" href="./assets/css/flexslider.min.css">
+  <link rel="preload" as="style" onload="this.rel='stylesheet'" href="./assets/css/slider.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -16,122 +17,274 @@
   <script src="./assets/js/jquery.flexslider.min.js" charset="utf-8" defer></script>
   <script src="./assets/js/pushbar.js" charset="utf-8" defer></script>
   <script src="./assets/js/chinampayolo.js" charset="utf-8" defer></script>
+  <script src="./assets/js/slider-chinampayolo.js" charset="utf-8"></script>
 </head>
 <body>
-  <header id="main_header" class="main_header landing">
+  <header id="main_header" class="main_header">
+    <svg enable-background="new 0 0 14.5 37.4" version="1.1" viewBox="0 0 14.5 37.4" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" class="main_header_deco h_deco_l">
+    	<path class="" d="m4.6 33c0-1 0-1.1 0.3-2 0-0.1 0.1-0.2 0.1-0.3 0.1-0.2 0.2-0.4 0.3-0.5 0.4-0.7 1-1.2 1.7-1.4 0.6-0.2 1.3-0.3 1.9-0.2 0.2 0 0.3 0.1 0.4 0.2l0.3 0.3c0.3 0.3 0.5 0.6 0.5 0.9 0.1 0.4 0.1 0.7 0.1 1.1 0 0.1 0 0.2-0.1 0.3-0.3 0.8-0.8 1.3-1.5 1.7-0.1 0.1-0.3 0.1-0.4 0.2-0.2 0.1-0.2 0.4 0 0.5 0.1 0.1 0.2 0.1 0.2 0.1h0.7 0.2c0.3-0.1 0.6-0.2 0.8-0.5 0.2-0.2 0.3-0.4 0.5-0.6 0.4-0.6 0.6-1.2 0.6-1.9v-0.5c0-0.3-0.1-0.6-0.1-0.9-0.1-0.3-0.2-0.5-0.4-0.8-0.3-0.3-0.6-0.6-0.9-0.8-0.4-0.2-0.7-0.3-1.1-0.4-0.9-0.1-1.7 0.1-2.5 0.5-1.1 0.6-1.8 1.4-2.3 2.6-0.2 0.4-0.3 0.9-0.3 1.3 0 0.1-0.1 0.3-0.1 0.4l-0.1 0.1h-0.3c-0.7 0-2 0.1-2.8 0.1h-0.3v-27.2c0.2 0 1-0.2 1.3-0.2 0.4 0 0.7-0.1 1.1-0.1h0.9 0.1l0.1 0.1c0 0.1 0.1 0.3 0.1 0.4 0.1 0.4 0.2 0.9 0.3 1.3 0.7 2 2.6 3.2 4.7 3.1 0.4 0 0.8-0.2 1.2-0.4s0.7-0.5 1-0.9c0.1-0.2 0.2-0.3 0.3-0.5 0.1-0.3 0.2-0.5 0.2-0.8v-1.1-0.2c-0.1-0.3-0.1-0.6-0.3-0.9-0.1-0.3-0.3-0.6-0.6-0.9-0.1-0.2-0.3-0.3-0.5-0.4-0.3-0.2-0.6-0.3-0.9-0.3h-0.4-0.2c-0.1 0-0.2 0.1-0.3 0.2v0.2c0 0.1 0.1 0.2 0.2 0.2 0.1 0.1 0.3 0.1 0.4 0.2 0.7 0.5 1.2 1 1.5 1.7 0.1 0.1 0.1 0.3 0.1 0.5 0 0.3 0 0.6-0.1 0.9v0.1c-0.2 0.5-0.4 0.8-0.8 1.1h-0.1c-0.1 0.1-0.2 0.2-0.4 0.2-0.4 0.1-0.9 0.1-1.3 0-0.8-0.2-1.5-0.6-2-1.2-0.3-0.3-0.6-0.7-0.7-1.1l-0.3-0.9c0-0.1 0-0.2-0.1-0.3-0.1-0.7 0-1.4 0.1-2.1 0.1-0.6 0.4-1.2 0.8-1.7 0.4-0.6 1-1 1.7-1.2 0.2-0.1 0.5-0.1 0.7-0.2 0.5-0.1 1-0.1 1.5-0.1 0.2 0 0.4 0 0.5 0.1 0.7 0.1 1.3 0.4 1.8 0.8 1.3 0.9 2.1 2 2.5 3.5 0.2 0.7 0.3 1.4 0.3 2.2 0 0.6 0 1.3-0.1 1.9-0.1 0.7-0.3 1.4-0.5 2s-0.4 1.1-0.8 1.6c-0.5 0.7-1 1.4-1.5 2-0.8 0.9-1.6 1.7-2.5 2.3-0.7 0.5-1.5 0.9-2.4 1.1-0.4 0.1-0.7 0.2-1.1 0.3-0.1 0-0.3 0.1-0.4 0.1-0.1 0.1-0.1 0.2-0.2 0.2-0.2 0.4-0.2 0.7 0 1.1 0.1 0.1 0.1 0.2 0.3 0.3 0.1 0 0.2 0.1 0.3 0.1 0.2 0.1 0.4 0.1 0.6 0.1 1.1 0.3 2.1 0.8 3 1.4 0.3 0.2 0.6 0.4 0.9 0.7 1.2 1 2.2 2.2 3 3.5 0.3 0.5 0.6 1 0.7 1.6 0.2 0.6 0.3 1.2 0.5 1.8 0.1 0.3 0.1 0.5 0.1 0.8 0.1 1.1 0.1 2.2-0.2 3.3s-0.8 2-1.5 2.8c-0.6 0.7-1.4 1.2-2.3 1.5-0.3 0.2-0.8 0.3-1.3 0.3-0.7 0-1.3-0.1-1.9-0.3s-1.1-0.5-1.5-1-0.7-1.1-0.9-1.8c-0.1-0.4-0.1-0.9-0.1-1.3z"/>
+    </svg>
+    <svg enable-background="new 0 0 14.5 37.4" version="1.1" viewBox="0 0 14.5 37.4" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" class="main_header_deco h_deco_r">
+    	<path class="" d="m9.9 4.4c0 1 0 1.1-0.3 2 0 0.1-0.1 0.2-0.1 0.3-0.1 0.1-0.2 0.3-0.3 0.5-0.4 0.7-1 1.2-1.7 1.4-0.6 0.2-1.3 0.3-1.9 0.2-0.2 0-0.3-0.1-0.4-0.2-0.2-0.1-0.3-0.1-0.4-0.2-0.2-0.3-0.4-0.6-0.5-1-0.1-0.3-0.1-0.7-0.1-1 0-0.1 0-0.2 0.1-0.3 0.3-0.8 0.8-1.3 1.5-1.7 0.1-0.1 0.2-0.2 0.4-0.2 0.2-0.1 0.2-0.4 0-0.5-0.1-0.1-0.2-0.1-0.3-0.2h-0.7-0.2c-0.3 0.2-0.6 0.3-0.8 0.5s-0.4 0.4-0.5 0.6c-0.3 0.6-0.6 1.2-0.6 1.9v0.5c0 0.3 0.1 0.6 0.1 0.9 0.1 0.3 0.2 0.5 0.4 0.8 0.3 0.3 0.6 0.6 1 0.8s0.7 0.3 1.1 0.4c0.9 0.1 1.8-0.1 2.6-0.5 1.1-0.6 1.8-1.4 2.3-2.6 0.2-0.4 0.3-0.9 0.3-1.3 0-0.1 0.1-0.3 0.1-0.4l0.1-0.1h0.3c0.7 0 2-0.1 2.8-0.1h0.3v27.1c-0.2 0-1 0.2-1.3 0.2-0.4 0-0.7 0.1-1.1 0.1-0.3 0-0.6 0-0.9 0.1h-0.1l-0.1-0.1c0-0.1-0.1-0.3-0.1-0.4-0.1-0.4-0.2-0.9-0.3-1.3-0.7-2-2.6-3.2-4.7-3.1-0.4 0-0.8 0.2-1.2 0.4s-0.7 0.5-1 0.9c-0.1 0.2-0.2 0.3-0.3 0.5-0.1 0.3-0.2 0.5-0.2 0.8v1.1 0.2c0.1 0.3 0.1 0.6 0.3 0.9 0.1 0.3 0.3 0.6 0.6 0.9 0.2 0.2 0.3 0.3 0.5 0.4 0.3 0.2 0.6 0.3 0.9 0.3h0.4 0.2c0.1 0 0.2-0.1 0.3-0.2v-0.2c0-0.1-0.1-0.2-0.2-0.2-0.2-0.1-0.3-0.2-0.5-0.3-0.7-0.4-1.2-0.9-1.4-1.6-0.1-0.1-0.1-0.3-0.1-0.5 0-0.3 0-0.6 0.1-0.9v-0.1c0.2-0.5 0.4-0.8 0.8-1.1h0.1c0.1-0.1 0.2-0.1 0.4-0.1 0.4-0.1 0.9-0.1 1.3 0 0.8 0.1 1.5 0.5 2.1 1.2 0.3 0.3 0.5 0.7 0.7 1.2 0.1 0.3 0.2 0.6 0.3 0.8 0 0.1 0 0.2 0.1 0.3 0.1 0.7 0 1.4-0.1 2.1-0.3 0.6-0.6 1.2-1 1.7-0.4 0.6-1 1-1.7 1.2-0.2 0.1-0.5 0.1-0.7 0.2-0.5 0.1-0.9 0.1-1.4 0.1-0.2 0-0.4 0-0.5-0.1-0.7-0.1-1.3-0.4-1.8-0.8-1.3-0.9-2.1-2-2.5-3.5-0.3-0.8-0.4-1.5-0.4-2.3 0-0.6 0-1.3 0.1-1.9 0.1-0.7 0.3-1.4 0.5-2s0.4-1.1 0.8-1.6c0.5-0.7 1-1.4 1.5-2 0.8-0.8 1.6-1.6 2.5-2.2 0.7-0.5 1.5-0.9 2.4-1.1 0.4-0.1 0.7-0.2 1.1-0.3 0.1 0 0.3-0.1 0.4-0.1s0.1-0.1 0.2-0.2c0.2-0.4 0.2-0.7 0-1.1-0.1-0.1-0.1-0.2-0.2-0.2s-0.2-0.1-0.3-0.1c-0.2-0.1-0.4-0.1-0.6-0.1-1.1-0.3-2.1-0.8-3-1.4-0.3-0.2-0.6-0.4-0.9-0.7-1.2-1-2.2-2.2-3-3.5-0.3-0.5-0.6-1-0.7-1.6-0.3-0.8-0.5-1.4-0.6-1.9-0.1-0.3-0.1-0.6-0.1-0.8-0.2-1.2-0.1-2.3 0.2-3.4s0.8-2 1.5-2.8c0.6-0.7 1.4-1.2 2.3-1.5 0.4-0.2 0.9-0.3 1.4-0.3 0.7 0 1.3 0.1 1.9 0.3s1.1 0.5 1.5 1 0.7 1.1 0.9 1.8c0.1 0.4 0.1 0.9 0.1 1.3z"/>
+    </svg>
+    <svg enable-background="new 0 0 29.5 11.4" version="1.1" viewBox="0 0 29.5 11.4" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" class="main_header_deco v_deco_b">
+    	<path class="" d="m3.5 7.8c0.8 0 0.9 0 1.6-0.2 0.1 0 0.1-0.1 0.2-0.1 0.1-0.1 0.3-0.1 0.4-0.2 0.5-0.3 0.9-0.8 1.1-1.4 0.2-0.5 0.2-1 0.2-1.5 0-0.1-0.1-0.2-0.1-0.3-0.2-0.1-0.2-0.2-0.3-0.3-0.2-0.2-0.5-0.4-0.7-0.4-0.3-0.1-0.6-0.1-0.9-0.1-0.1 0-0.2 0-0.3 0.1-0.5 0.2-1 0.6-1.3 1.1 0 0.2-0.1 0.3-0.1 0.4-0.1 0.1-0.3 0.1-0.4 0 0-0.1-0.1-0.1-0.1-0.2v-0.6-0.2c0.1-0.2 0.2-0.4 0.4-0.6l0.4-0.4c0.5-0.3 1-0.5 1.5-0.5h0.4c0.2 0 0.5 0 0.7 0.1l0.6 0.3c0.3 0.2 0.5 0.5 0.7 0.7 0.2 0.3 0.3 0.6 0.3 0.9 0.1 0.7-0.1 1.4-0.4 2-0.4 1-1.1 1.6-2 1.9-0.4 0.1-0.7 0.2-1.1 0.3-0.1 0-0.2 0-0.3 0.1l-0.1 0.1v0.2c0 0.6-0.1 1.6 0 2.2v0.2h21.4c0-0.2 0.1-0.8 0.1-1 0-0.3 0-0.6 0.1-0.8 0-0.2 0-0.5 0.1-0.7v-0.1s0-0.1-0.1-0.1-0.2 0-0.3-0.1c-0.4-0.1-0.7-0.2-1-0.3-1.6-0.6-2.6-2.1-2.4-3.7 0-0.3 0.1-0.7 0.3-1s0.4-0.6 0.7-0.8c0.1-0.1 0.3-0.2 0.4-0.2 0.2-0.1 0.4-0.1 0.6-0.1h0.8 0.2c0.2 0.1 0.5 0.1 0.7 0.2s0.5 0.3 0.7 0.5c0.1 0.1 0.2 0.3 0.3 0.4 0.1 0.2 0.2 0.5 0.2 0.7v0.3 0.2c0 0.1-0.1 0.2-0.2 0.2h-0.2c-0.1 0-0.1-0.1-0.2-0.1-0.1-0.1-0.1-0.2-0.2-0.3-0.3-0.5-0.7-0.9-1.3-1.1-0.1 0-0.2-0.1-0.4-0.1s-0.5 0-0.7 0.1h-0.1c-0.4 0.1-0.7 0.3-0.9 0.7 0 0.1-0.1 0.2-0.1 0.3-0.1 0.3 0 0.7 0 1 0.3 0.5 0.6 1.1 1.1 1.5 0.3 0.2 0.6 0.4 0.9 0.5 0.2 0.1 0.4 0.1 0.7 0.2h0.3c0.6 0 1.1 0 1.7-0.1 0.5-0.1 0.9-0.3 1.3-0.6 0.5-0.3 0.8-0.8 0.9-1.3 0.1-0.2 0.1-0.4 0.1-0.6 0.1-0.4 0.1-0.7 0.1-1.1 0-0.1 0-0.3-0.1-0.4-0.1-0.5-0.3-1-0.6-1.5-0.7-1-1.6-1.6-2.8-2-0.6 0-1.1-0.1-1.7-0.1-0.5 0-1 0-1.5 0.1s-1.1 0.3-1.6 0.4-0.9 0.4-1.3 0.6c-0.6 0.4-1.1 0.8-1.6 1.2-0.7 0.6-1.3 1.3-1.7 2-0.4 0.6-0.7 1.2-0.9 1.9-0.1 0.3-0.2 0.6-0.2 0.9 0 0.1-0.1 0.2-0.1 0.3s-0.1 0.1-0.1 0.2c-0.3 0.2-0.6 0.2-0.9 0-0.1 0-0.1-0.1-0.2-0.2 0-0.1-0.1-0.2-0.1-0.2 0-0.2-0.1-0.3-0.1-0.5-0.2-0.9-0.6-1.7-1.1-2.4-0.2-0.2-0.4-0.5-0.5-0.7-0.8-0.9-1.7-1.7-2.8-2.4-0.5-0.3-0.9-0.5-1.3-0.7-0.5-0.1-0.9-0.2-1.4-0.3-0.2-0.1-0.4-0.1-0.6-0.2-0.9 0-1.8 0-2.7 0.2-0.8 0.2-1.5 0.6-2.2 1.2-0.5 0.5-1 1.1-1.2 1.8-0.1 0.4-0.2 0.7-0.2 1.1 0 0.5 0.1 1 0.2 1.5 0.2 0.5 0.4 0.9 0.8 1.2s0.9 0.6 1.4 0.7c0.4 0.1 0.7 0.1 1.1 0.1z"/>
+    </svg>
+    <svg enable-background="new 0 0 29.5 11.4" version="1.1" viewBox="0 0 29.5 11.4" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" class="main_header_deco v_deco_t">
+    	<path class="" d="m26 3.6c-0.8 0-0.9 0-1.6 0.2-0.1 0-0.1 0.1-0.2 0.1-0.1 0.1-0.3 0.1-0.4 0.2-0.5 0.3-0.9 0.8-1.1 1.4-0.2 0.5-0.2 1-0.2 1.5 0 0.1 0.1 0.2 0.1 0.3 0.1 0.1 0.1 0.2 0.2 0.2 0.3 0.3 0.5 0.5 0.8 0.5 0.3 0.1 0.6 0.1 0.8 0 0.1 0 0.2 0 0.3-0.1 0.6-0.2 1-0.6 1.3-1.2 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.2 0.3-0.2 0.4 0 0 0.1 0.1 0.1 0.1 0.2v0.6 0.2c-0.1 0.2-0.2 0.5-0.4 0.6l-0.4 0.4c-0.5 0.3-1 0.5-1.5 0.5h-0.4c-0.2 0-0.5 0-0.7-0.1l-0.6-0.3c-0.3-0.2-0.5-0.5-0.7-0.7-0.2-0.3-0.3-0.6-0.3-0.9-0.1-0.7 0.1-1.4 0.4-2 0.4-0.9 1.1-1.4 2-1.8 0.3-0.1 0.7-0.2 1-0.3 0.1 0 0.2 0 0.3-0.1l0.1-0.1v-0.2c0-0.6 0.1-1.6 0-2.2v-0.2h-21.3c0 0.2-0.1 0.8-0.1 1-0.1 0.3-0.1 0.6-0.1 0.8s0 0.5-0.1 0.7v0.1s0 0.1 0.1 0.1 0.2 0 0.3 0.1c0.4 0.1 0.7 0.2 1 0.3 1.6 0.6 2.6 2.1 2.4 3.7 0 0.3-0.1 0.7-0.3 1-0.1 0.3-0.3 0.5-0.6 0.7-0.2 0.1-0.3 0.2-0.5 0.3-0.2 0-0.4 0.1-0.6 0.1h-0.8-0.2c-0.2-0.1-0.5-0.1-0.7-0.2-0.3-0.1-0.5-0.3-0.7-0.5-0.1-0.1-0.2-0.2-0.3-0.4-0.2-0.2-0.2-0.4-0.2-0.7v-0.3-0.2c0-0.1 0.1-0.2 0.2-0.2h0.2c0.1 0 0.1 0.1 0.2 0.1 0.1 0.1 0.1 0.2 0.2 0.3 0.1 0.6 0.6 1 1.1 1.2 0.1 0 0.2 0.1 0.4 0.1s0.5 0 0.7-0.1h0.1c0.4-0.1 0.7-0.3 0.9-0.7 0-0.1 0.1-0.2 0.1-0.3 0.1-0.3 0-0.7 0-1-0.1-0.6-0.4-1.2-0.9-1.6-0.3-0.2-0.6-0.4-0.9-0.5-0.2-0.1-0.5-0.2-0.7-0.2h-0.3c-0.6 0-1.1 0-1.7 0.1-0.4 0-0.9 0.2-1.3 0.5s-0.7 0.8-0.9 1.3c-0.1 0.2-0.1 0.4-0.1 0.6-0.1 0.4-0.1 0.7-0.1 1.1 0 0.1 0 0.3 0.1 0.4 0.1 0.5 0.3 1 0.6 1.5 0.7 1 1.6 1.6 2.8 2 0.6 0.2 1.1 0.3 1.7 0.3 0.5 0 1 0 1.5-0.1s1.1-0.3 1.6-0.4 0.9-0.4 1.3-0.6c0.6-0.4 1.1-0.8 1.6-1.2 0.7-0.6 1.3-1.3 1.7-2 0.4-0.6 0.7-1.2 0.9-1.9 0.1-0.4 0.2-0.7 0.2-1 0-0.1 0.1-0.2 0.1-0.3s0.1-0.1 0.1-0.2c0.3-0.2 0.6-0.2 0.9 0 0.1 0 0.1 0.1 0.2 0.2 0 0.1 0.1 0.2 0.1 0.2 0 0.2 0.1 0.3 0.1 0.5 0.2 0.9 0.6 1.7 1.1 2.4 0.2 0.2 0.4 0.5 0.5 0.7 0.8 0.9 1.7 1.7 2.8 2.4l1.2 0.6c0.5 0.2 0.9 0.3 1.4 0.4 0.2 0 0.4 0.1 0.6 0.1 0.9 0.1 1.8 0 2.6-0.2s1.6-0.6 2.2-1.2c0.5-0.5 1-1.1 1.2-1.8 0.1-0.4 0.2-0.7 0.2-1.1 0-0.5-0.1-1-0.2-1.5s-0.4-0.9-0.8-1.2c-0.3-0.3-0.8-0.5-1.3-0.6-0.3-0.1-0.7-0.1-1-0.1z"/>
+    </svg>
+
+
     <div class="container">
       <div class="row">
-
-        <button type="button" name="nav_open" class="btn main_nav_btn nav_open" data-pushbar-target="main_nav" aria-label="open menu"><svg height="384pt" viewBox="0 -53 384 384" width="384pt" xmlns="http://www.w3.org/2000/svg"><path style="fill:var(--c_deep_blue);" d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path style="fill:var(--c_deep_blue);" d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path style="fill:var(--c_deep_blue);" d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/></svg></button>
-        <div class="main_header_sm_wrapper row justify-between d-lg-none">
-          <a href="#" rel="external author"><img src="./assets/img/icons/sm/facebook.svg" alt="facebook"></a>
-          <a href="#" rel="external author"><img src="./assets/img/icons/sm/instagram.svg" alt="instagram"></a>
-          <a href="#" rel="external author"><img src="./assets/img/icons/sm/twitter.svg" alt="twitter"></a>
-          <a href="#" rel="external author"><img src="./assets/img/icons/sm/youtube.svg" alt="youtube"></a>
+        <div class="col-1">
+          <button type="button" name="button" class="btn main_nav_btn" data-pushbar-target="main_nav" aria-label="open menu">
+            <svg height="384pt" viewBox="0 -53 384 384" width="384pt" xmlns="http://www.w3.org/2000/svg"><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/></svg>
+          </button>
         </div>
+        <div class="col col-10 d-flex align-center justify-center">
+          <svg enable-background="new 0 0 552 44" version="1.1" viewBox="0 0 552 44" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <image transform="translate(-7.1663 -6.1663)" width="566" height="56" opacity=".25" overflow="visible" xlink:href="/assets/img/main-logo-shadow.png">
+            </image>
+            <path class="header_logo_color" d="m32.1 24.9l3.6 5.4-0.5 0.3c-0.4-0.3-0.6-0.5-0.9-0.5-0.2 0-0.9 0.3-1.9 0.9-2.2 1.3-4 2.1-5.5 2.5s-3.3 0.7-5.3 0.7c-4.1 0-7.4-1-10-2.9-1.5-1.1-2.8-2.5-3.6-4.2-1-1.9-1.5-4-1.5-6.3 0-3.1 0.9-5.9 2.7-8.2 2.8-3.5 6.9-5.2 12.5-5.2 2 0 3.8 0.2 5.3 0.6s3.3 1.3 5.5 2.5c1 0.6 1.7 0.9 1.9 0.9s0.5-0.2 0.9-0.5l0.5 0.3-3.6 5.4-0.5-0.3v-0.5c0-0.4-0.2-0.7-0.5-1s-0.9-0.7-1.7-1.2c-2.2-1.3-4.6-1.9-7.1-1.9-3 0-5.3 0.7-7.1 2.2-2.1 1.7-3.1 4-3.1 6.8s1 5 3.1 6.8c1.8 1.5 4.1 2.2 7.1 2.2 2.5 0 4.9-0.6 7.1-1.9 0.8-0.5 1.4-0.8 1.7-1.2 0.3-0.3 0.5-0.7 0.5-1v-0.5l0.4-0.2z"/>
+            <path class="header_logo_color" d="m73.5 24.5h-11.8v7.3c0 0.4 0.1 0.7 0.3 0.9s0.5 0.4 0.9 0.5v0.5h-7.5v-0.5c0.4-0.1 0.8-0.3 0.9-0.5 0.2-0.2 0.3-0.5 0.3-0.9v-17.3c0-0.4-0.1-0.7-0.3-0.9s-0.5-0.4-0.9-0.5v-0.5h7.5v0.5c-0.5 0.1-0.8 0.3-0.9 0.5-0.2 0.2-0.3 0.5-0.3 0.9v6.2h11.9v-6.2c0-0.4-0.1-0.7-0.3-0.9s-0.5-0.4-1-0.5v-0.5h7.5v0.5c-0.5 0.1-0.8 0.3-0.9 0.5-0.2 0.2-0.3 0.5-0.3 0.9v17.3c0 0.4 0.1 0.7 0.3 0.9s0.5 0.4 0.9 0.5v0.5h-7.5v-0.5c0.4-0.1 0.8-0.3 0.9-0.5 0.2-0.2 0.3-0.5 0.3-0.9v-7.3z"/>
+            <path class="header_logo_color" d="m116.6 14.5v17.3c0 0.4 0.1 0.7 0.3 0.9s0.5 0.4 0.9 0.5v0.5h-7.5v-0.5c0.4-0.1 0.8-0.3 0.9-0.5 0.2-0.2 0.3-0.5 0.3-0.9v-17.3c0-0.4-0.1-0.7-0.3-0.9s-0.5-0.4-0.9-0.5v-0.5h7.5v0.5c-0.5 0.1-0.8 0.3-0.9 0.5-0.2 0.2-0.3 0.5-0.3 0.9z"/>
+            <path class="header_logo_color" d="m153.8 19.8v12c0 0.4 0.1 0.7 0.3 0.9s0.5 0.4 0.9 0.5v0.5h-7v-0.5c0.4-0.1 0.8-0.3 0.9-0.5 0.2-0.2 0.3-0.5 0.3-0.9v-17.3c0-0.4-0.1-0.7-0.3-0.9s-0.5-0.4-0.9-0.5v-0.5h8.2v0.5c-0.6 0.1-0.8 0.4-0.8 0.7s0.2 0.7 0.6 1.1l11.4 11.3v-11.7c0-0.4-0.1-0.7-0.3-0.9s-0.5-0.4-0.9-0.5v-0.5h7.1v0.5c-0.5 0.1-0.8 0.3-0.9 0.5-0.2 0.2-0.3 0.5-0.3 0.9v17.3c0 0.4 0.1 0.7 0.3 0.9s0.5 0.4 0.9 0.5v0.5h-7.6v-0.5c0.6-0.1 0.8-0.3 0.8-0.7 0-0.2-0.1-0.4-0.2-0.5-0.2-0.2-0.5-0.6-1-1.1l-11.5-11.1z"/>
+            <path class="header_logo_color" d="m211.5 28.5h-9.8l-1.1 2.3c-0.3 0.6-0.4 1-0.4 1.3 0 0.6 0.4 1 1.2 1.2v0.5h-7.8v-0.5c0.5-0.1 0.8-0.2 1.1-0.4 0.2-0.2 0.5-0.6 0.8-1.3l7.8-15.7c0.3-0.6 0.4-1.1 0.4-1.6s-0.4-0.9-1.1-1.2v-0.5h8.2v0.5c-0.7 0.3-1 0.7-1 1.3 0 0.4 0.2 0.9 0.5 1.5l8 15.2c0.4 0.8 0.8 1.4 1 1.6 0.3 0.2 0.6 0.4 1.2 0.5v0.5h-8.7v-0.5c0.8-0.1 1.2-0.5 1.2-1.2 0-0.4-0.2-0.9-0.5-1.5l-1-2zm-1.6-3l-3.5-6.8-3.3 6.8h6.8z"/>
+            <path class="header_logo_color" d="m253.1 33.8l-7.7-14v12c0 0.4 0.1 0.7 0.3 0.9s0.5 0.4 0.9 0.5v0.5h-7.1v-0.5c0.4-0.1 0.8-0.3 0.9-0.5 0.2-0.2 0.3-0.5 0.3-0.9v-17.3c0-0.4-0.1-0.7-0.3-0.9s-0.5-0.4-0.9-0.5v-0.5h9v0.5c-0.6 0.2-0.9 0.5-0.9 1.1 0 0.5 0.2 1.2 0.6 1.9l5.3 9.6 5.3-9.5c0.6-1 0.9-1.7 0.9-2.1 0-0.5-0.3-0.8-0.9-1v-0.5h8.7v0.5c-0.5 0.1-0.8 0.3-0.9 0.5-0.2 0.2-0.3 0.5-0.3 0.9v17.3c0 0.4 0.1 0.7 0.3 0.9s0.5 0.4 0.9 0.5v0.5h-7.5v-0.5c0.4-0.1 0.8-0.3 0.9-0.5 0.2-0.2 0.3-0.5 0.3-0.9v-12l-8.1 14z"/>
+            <path class="header_logo_color" d="m295.1 25.1v6.8c0 0.4 0.1 0.7 0.3 0.9s0.5 0.4 0.9 0.5v0.5h-7.5v-0.5c0.4-0.1 0.8-0.3 0.9-0.5 0.2-0.2 0.3-0.5 0.3-0.9v-17.4c0-0.4-0.1-0.7-0.3-0.9s-0.5-0.4-0.9-0.5v-0.5h13.8c2.7 0 4.8 0.4 6.2 1.2 0.8 0.5 1.4 1.2 1.9 2 0.5 0.9 0.7 1.9 0.7 3 0 2.1-0.7 3.7-2.2 4.7-1.4 1-3.6 1.5-6.6 1.5h-7.5zm0-3.9h7.2c1.3 0 2.3-0.1 2.8-0.4 0.8-0.4 1.1-1 1.1-2s-0.4-1.7-1.1-2c-0.5-0.3-1.4-0.4-2.8-0.4h-7.2v4.8z"/>
+            <path class="header_logo_color" d="m350.9 28.5h-9.8l-1.1 2.3c-0.3 0.6-0.4 1-0.4 1.3 0 0.6 0.4 1 1.2 1.2v0.5h-7.8v-0.5c0.5-0.1 0.8-0.2 1.1-0.4 0.2-0.2 0.5-0.6 0.8-1.3l7.8-15.7c0.3-0.6 0.4-1.1 0.4-1.6s-0.4-0.9-1.1-1.2v-0.5h8.2v0.5c-0.7 0.3-1 0.7-1 1.3 0 0.4 0.2 0.9 0.5 1.5l8 15.2c0.4 0.8 0.8 1.4 1 1.6 0.3 0.2 0.6 0.4 1.2 0.5v0.5h-8.7v-0.5c0.8-0.1 1.2-0.5 1.2-1.2 0-0.4-0.2-0.9-0.5-1.5l-1-2zm-1.5-3l-3.5-6.8-3.3 6.8h6.8z"/>
+            <path class="header_logo_color" d="m395.6 24.5v7.4c0 0.4 0.1 0.7 0.3 0.9s0.5 0.4 0.9 0.5v0.5h-7.5v-0.5c0.5-0.1 0.8-0.3 0.9-0.5 0.2-0.2 0.3-0.5 0.3-0.9v-7.4l-6.3-8.7c-0.7-1-1.3-1.6-1.7-2s-0.9-0.6-1.5-0.7v-0.5h9.6v0.5c-0.8 0.2-1.2 0.6-1.2 1.2 0 0.3 0.3 0.8 0.9 1.7l3.1 4.3 3-4.3c0.6-0.8 0.9-1.4 0.9-1.7 0-0.5-0.4-0.9-1.2-1.1v-0.5h9.1v0.5c-0.6 0.1-1.1 0.4-1.5 0.7-0.4 0.4-1 1-1.7 2l-6.4 8.6z"/>
+            <path class="header_logo_color" d="m439.5 12.1c3.4 0 6.2 0.9 8.4 2.6 2.7 2.1 4 5 4 8.7 0 3.5-1.3 6.3-4 8.3-2.2 1.7-5 2.6-8.4 2.6s-6.2-0.9-8.4-2.6c-2.7-2.1-4.1-4.9-4.1-8.5s1.4-6.5 4.1-8.5c2.3-1.7 5.1-2.6 8.4-2.6zm0 4c-2.2 0-4 0.7-5.4 2.1-1.3 1.3-1.9 3-1.9 4.9 0 2 0.6 3.6 1.9 4.9 1.4 1.4 3.2 2.1 5.4 2.1s4-0.7 5.4-2.1c1.3-1.3 1.9-2.9 1.9-4.8 0-2.1-0.6-3.8-1.9-5-1.4-1.3-3.2-2.1-5.4-2.1z"/>
+            <path class="header_logo_color" d="m482.3 29.9h11.9c0.4 0 0.7-0.1 0.9-0.3s0.4-0.5 0.5-1h0.5v6.4h-0.5c-0.1-0.5-0.3-0.8-0.5-0.9-0.2-0.2-0.5-0.3-0.9-0.3h-18.2v-0.5c0.4-0.1 0.8-0.3 0.9-0.5 0.2-0.2 0.3-0.5 0.3-0.9v-17.4c0-0.4-0.1-0.7-0.3-0.9s-0.5-0.4-0.9-0.5v-0.5h7.5v0.5c-0.5 0.1-0.8 0.3-0.9 0.5-0.2 0.2-0.3 0.5-0.3 0.9v15.4z"/>
+            <path class="header_logo_color" d="m532.5 12.1c3.4 0 6.2 0.9 8.4 2.6 2.7 2.1 4 5 4 8.7 0 3.5-1.3 6.3-4 8.3-2.2 1.7-5 2.6-8.4 2.6s-6.2-0.9-8.4-2.6c-2.7-2.1-4.1-4.9-4.1-8.5s1.4-6.5 4.1-8.5c2.3-1.7 5.1-2.6 8.4-2.6zm0 4c-2.2 0-4 0.7-5.4 2.1-1.3 1.3-1.9 3-1.9 4.9 0 2 0.6 3.6 1.9 4.9 1.4 1.4 3.2 2.1 5.4 2.1s4-0.7 5.4-2.1c1.3-1.3 1.9-2.9 1.9-4.8 0-2.1-0.6-3.8-1.9-5-1.4-1.3-3.2-2.1-5.4-2.1z"/>
+          </svg>
+
+        </div>
+        <div class="col col-1"></div>
       </div>
     </div>
   </header>
-  <main id="main_content" class="main_content">
-    <section id="main_slider" class="main_slider">
-      <div class="flexslider">
-        <ul class="slides">
-          <li>
-            <img src="./assets/img/main_slider/slide_1.png" />
-          </li>
-          <li>
-            <img src="./assets/img/main_slider/slide_1.png" />
-          </li>
-          <li>
-            <img src="./assets/img/main_slider/slide_1.png" />
-          </li>
-          <li>
-            <img src="./assets/img/main_slider/slide_1.png" />
-          </li>
-        </ul>
-      </div>
-      <div class="logo_container">
-        <img src="./assets/img/slider_logo.svg" alt="">
-      </div>
-    </section>
-    <section id="main_content" class="main_content container-body">
-      <div class="sticky_sm p-absolute">
-        <div class="sticky_sm_wrapper d-none d-lg-flex p-stiky flex-column">
-          <a href="#" rel="external author"><img src="./assets/img/icons/sm/facebook.svg" alt="facebook"></a>
-          <a href="#" rel="external author"><img src="./assets/img/icons/sm/instagram.svg" alt="instagram"></a>
-          <a href="#" rel="external author"><img src="./assets/img/icons/sm/twitter.svg" alt="twitter"></a>
-          <a href="#" rel="external author"><img src="./assets/img/icons/sm/youtube.svg" alt="youtube"></a>
+  <main id="wholepage">
+    <section data-title="inicio" >
+      <div class="page" style="background-color:var(--c_s1_secondary)">
+        <div class="page-wrapper">
+          <div class="index_logo">
+            <img src="./assets/img/sections/index/index.svg" alt="chinampayolo">
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <article class="text_content index">
-            <div class="index_bullet_contaier">
-              <img src="./assets/img/index/bullet.svg" alt="bullet">
-            </div>
-            <h1>DESCRIPCIÓN:</h1>
-            <p style="text-align:justify">La cooperativa surge como una propuesta para la transformación de la realidad. Buscamos y promovemos alianzas y cooperación nacional e internacional con instituciones académicas, gubernamentales y organizaciones de la sociedad civil para lograr la permanencia y reinvención del territorio lacustre de la cuenca de México. Los temas que nos ocupan son la cultura, la educación, la tecnología, la investigación y el fortalecimiento de lazos comunitarios que permiten construir el presente y el futuro común. Chinampayolo es una oportunidad para proponer ideas, iniciativas y acciones que desarrollen las capacidades individuales y colectivas construyendo una sociedad sana, justa, incluyente y participativa que contribuya a mejorar las expectativas para las generaciones presentes y futuras.</p>
-          </article>
+      <div class="page" style="background-color:var(--c_s1_base)">
+        <div class="page-wrapper">
+          <h1>Descripción de la cooperativa</h1>
+          <p>Chinampayolo surge como una propuesta para la transformación de la realidad. Buscamos y promovemos alianzas y cooperación nacional e internacional con instituciones académicas, gubernamentales y organizaciones de la sociedad civil para la reinvención del territorio Chinampero. Los temas que nos ocupan son la cultura, la educación, la tecnología, la investigación y el fortalecimiento de lazos comunitarios que permiten construir el presente y el futuro común. Chinampayolo es una oportunidad para proponer ideas, iniciativas y acciones que desarrollen las capacidades individuales y colectivas.</p>
+
         </div>
-        <div class="col-12 col-md-6">
-          <article class="text_content index">
-            <div class="mivi_wrapper">
-              <h1 class="mision">Misión</h1>
-              <p>Preservar la cultura chinampera a través de la Innovación y el conocimiento heredado para mantener nuestra identidad, dignidad, resistencia, amor a la tierra y respeto a la vida presente y futura.</p>
-            </div>
-            <div class="mivi_wrapper">
-              <h1 class="vision">Visión</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit porro molestiae neque sunt incidunt, velit officiis quo, nam unde exercitationem vitae ex, eligendi quam eveniet eos beatae laborum non eius.</p>
-            </div>
-          </article>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/index/pic/IMG_1579.jpg')">
+        <div class="page-wrapper">
+
         </div>
-        <div class="col-12">
-          <section class="text_content location_module">
-            <h1 class="title_b">NUESTRA UBICACIÓN</h1>
-            <div class="location_map">
-              <div class="mapa">
-                <div id="map" class="mapa"></div>
-              </div>
-              <img src="./assets/img/index/map_data_desktop.svg" alt="data-desktop" class="data data-desktop d-md-block d-none">
-              <!-- <img src="./assets/img/index/map.svg" alt="map"> -->
-            </div>
-            <img src="./assets/img/index/map_data_mobil.svg" alt="data-mobil" class="data data-mobil d-block d-md-none">
-          </section>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/index/pic/IMG_6509.jpg')">
+        <div class="page-wrapper">
+
         </div>
-        <div class="col-12">
-          <section class="text_content members_module">
-            <h1 class="title_b">INTEGRANTES</h1>
-            <div class="members_row row">
-              <div class="column col-6">
-                <figure>
-                  <img src="./assets/img/index/integrantes-01.png" alt="Trulli" style="width:100%">
-                  <figcaption>Marco</figcaption>
-                </figure>
-              </div>
-              <div class="column col-6">
-                <figure>
-                  <img src="./assets/img/index/integrantes-02.png" alt="Trulli" style="width:100%">
-                  <figcaption>Pedro</figcaption>
-                </figure>
-              </div>
-              <div class="column col-6">
-                <figure>
-                  <img src="./assets/img/index/integrantes-03.png" alt="Trulli" style="width:100%">
-                  <figcaption>Carlos</figcaption>
-                </figure>
-              </div>
-              <div class="column col-6">
-                <figure>
-                  <img src="./assets/img/index/integrantes-04.png" alt="Trulli" style="width:100%">
-                  <figcaption>Felipe</figcaption>
-                </figure>
-              </div>
-            </div>
-          </section>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/index/pic/IMG_9672.jpg')">
+        <div class="page-wrapper">
+
         </div>
       </div>
     </section>
+    <section data-title="El Endemico">
+      <div class="page"  style="background-color:var(--c_s2_secondary)">
+        <div class="page-wrapper">
+          <div class="index_logo">
+            <img src="./assets/img/sections/endemico/endemico.svg" alt="el endemico">
+          </div>
+        </div>
+      </div>
+      <div class="page"  style="background-color:var(--c_s2_secondary)">
+        <div class="page-wrapper">
+          <h1>CHINAMPAYOLO<br>ENDEMICO<br>(COMERCIALIZACIÓN)</h1>
+          <p>Es una iniciativa para fomentar el comercio justo, solidario y responsable, en donde productores y consumidores generan alianzas y lazos de confianza para el resguardo del patrimonio natural y cultural de la humanidad. </p>
+        </div>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/endemico/pic/IMG_3752.jpg')">
+        <div class="page-wrapper">
+
+        </div>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/endemico/pic/IMG_0035.jpg')">
+        <div class="page-wrapper">
+
+        </div>
+      </div>
+    </section>
+    <section data-title="visitas">
+      <div class="page" style="background-color:var(--c_s3_secondary)">
+        <div class="page-wrapper">
+          <div class="index_logo">
+            <img src="./assets/img/sections/visitas/visitas.svg" alt="visitas">
+          </div>
+        </div>
+      </div>
+      <div class="page" style="background-color:var(--c_s3_base)">
+        <div class="page-wrapper">
+          <h1>CHINAMPAYOLO<wbr>VISITAS<br>(COMERCIALIZACIÓN)</h1>
+          <p>Desde hace más de mil años los chinamperos son guardianes del maravilloso ecosistema lacustre de Xochimilco, que les permitió formar las chinampas, uno de los sistemas agrícolas más eficientes en el mundo. Aquí la organización familiar ha sido piedra angular en la transmisión de conocimiento generación tras generación, haciendo una herencia de los saberes que han permitido seguir cuidando, cultivando y comprendiendo el territorio.</p>
+        </div>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/visitas/pic/Carlos.jpg')">
+        <div class="page-wrapper">
+        </div>
+      </div>
+      <div class="page"  style="background-color:var(--c_s3_base)">
+        <div class="page-wrapper">
+          <p>En Xochimilco convivimos con especies maravillosas como los axolotes en peligro de extinción que pueden regenerar su cuerpo, pelícanos y otras aves migratorias que nos visitan desde muy lejos y árboles  que pueden vivir en el agua y crecer más altos que un edificio de 10 pisos. Además, el sistema chinampero está hecho para una intensa producción de alimentos, facilitada por la fertilidad de los suelos tan ricos en materia orgánica y la accesibilidad al agua para riego.</p>
+        </div>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/visitas/pic/2_1.jpg')">
+        <div class="page-wrapper">
+
+        </div>
+      </div>
+      <div class="page" style="background-color:var(--c_s3_base)">
+        <div class="page-wrapper">
+          <p>En Chinampayolo nos encomendamos a cuidar este acervo ecológico y buscamos compartirlo, pues la comunidad es uno de los ejes que sostienen la chinampería. Desde este gusto surge la invitación para tod@s quienes quieran aprender de la biodiversidad del humedal, de la cultura lacustre, de sus paisajes y su gente, a introducirse a este oasis y compartir experiencias, conocimiento y puntos de vista con el fin de seguir nutriendo y sosteniendo Xochimilco desde una conciencia socio-ambiental y en defensa del territorio.</p>
+        </div>
+      </div>
+      <div class="page"  style="background-color:var(--c_s3_base)">
+        <div class="page-wrapper">
+          <p>Trabajamos para</p>
+
+          <ul>
+            <li>La conservación del territorio lacustre</li>
+            <li>Difundir y sostener el valor e importancia de la chinampería como espacio/cuerpo agroecológico ancestral</li>
+            <li>Promover el turismo consciente, responsable y participativo en Xochimilco</li>
+            <li>Ofrecer una experiencia enriquecedora y en contacto con la naturaleza para l@s visitantes</li>
+          </ul>
+
+          <p>Nuestro Objetivo:
+            Acercar a l@s viajer@s a la riqueza natural y cultural que resguarda la chinampería a través de visitas, recorridos y degustación de alimentos ofreciendo una experiencia que despierte los sentidos de nuestros invitados y los enriquezca culturalmente.
+            Somos un colectivo que promueve el diálogo y la interrelación, por lo que estamos siempre abiertos a platicar las necesidades intereses e inquietudes de nuestros visitantes, comprometidos con el intento de brindar experiencias hermosas para uds.</p>
+        </div>
+      </div>
+    </section>
+    <section data-title="Restauración Ecológica">
+      <div class="page" style="background-color:var(--c_s4_base)">
+        <div class="page-wrapper">
+          <div class="index_logo">
+            <img src="./assets/img/sections/restauracion-ecologica/restauracion-ecologica.svg" alt="Restauración Ecológica">
+          </div>
+        </div>
+      </div>
+      <div class="page" style="background-color:var(--c_s4_base)">
+        <div class="page-wrapper">
+          <h1 class="white">CONSERVACIÓN Y RESTAURACIÓN</h1>
+          <p class="white">Las chinampas son verdaderos laboratorios vivientes en donde procuramos el restablecimiento de todas las formas de vida. Trabajamos con biorremediación de cuerpos de agua, recuperación de especies en peligro de extinción y recuperación y preservación de semillas criollas.</p>
+          <h1 class="white">Nuestro Objetivo</h1>
+          <p class="white">Conservar la riqueza y diversidad de plantas, animales y microorganismos de las chinampas a través del diálogo de saberes que favorece la construcción de conocimientos y el entendimiento de una compleja dinámica poblacional de simbiosis y autorregulación.</p>
+          <p class="white">Trabajamos para solucionar problemas de:</p>
+          <ul class="white">
+            <li>Contaminación de agua</li>
+            <li>Contaminación de suelo</li>
+            <li>Extinción de especies endémicas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/restauracion-ecologica/pic/ajolote.jpg')">
+        <div class="page-wrapper">
+
+        </div>
+      </div>
+      <div class="page" style="background-color:var(--c_s4_base)">
+        <div class="page-wrapper">
+          <h1 class="white">Nuestros proyectos</h1>
+          <p class="white">Generación de refugios de vida silvestre
+            Producción chinampera libre de agroquímicos
+            Banco de semillas locales</p>
+          <p class="white">dinámica poblacional de simbiosis y autorregulación.</p>
+          <p class="white">Trabajamos para solucionar problemas de:</p>
+          <ul class="white">
+            <li>Contaminación de agua</li>
+            <li>Contaminación de suelo</li>
+            <li>Extinción de especies endémicas</li>
+          </ul>
+          <p class="white">Nuestros proyectos</p>
+          <p class="white">Generación de refugios de vida silvestre</p>
+          <p class="white">Producción chinampera libre de agroquímicos</p>
+          <p class="white">Banco de semillas locales</p>
+        </div>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/restauracion-ecologica/pic/conservacion.jpg')">
+        <div class="page-wrapper">
+
+        </div>
+      </div>
+    </section>
+    <section data-title="Escuela Chinampera">
+      <div class="page" style="background-color:var(--c_s5_base)">
+        <div class="page-wrapper">
+          <div class="index_logo">
+            <img src="./assets/img/sections/escuela-chinampera/escuela-chinampera.svg" alt="Escuela Chinampera">
+          </div>
+        </div>
+      </div>
+      <div class="page" style="background-color:var(--c_s5_secondary)">
+        <div class="page-wrapper">
+          <h1>ESCUELA<wbr>AGROECOLÓGICA<br>CHINAMPERA</h1>
+            <p>Es un espacio para el diálogo de saberes, el encuentro y el aprendizaje horizontal, profundo, individual y colectivo, para compartir y poner al servicio de la población en general y de diversas comunidades, las académicas incluidas, la herencia cultural que hemos recibido, la que nos ha formado y la que queremos que continúe en las nuevas generaciones.</p>
+
+        </div>
+      </div>
+      <div class="page" style="background-image:url('./assets/img/sections/escuela-chinampera/pic/IMG_0582.jpg')">
+
+        </div>
+      </div>
+      <div class="page" style="background-color:var(--c_s5_secondary)">
+        <div class="page-wrapper">
+          <h1>c) Objetivo</h1>
+          <p>Promover aprendizajes sólidos viviendo la experiencia del saber chinampero para reproducir con conciencia, efectividad y profesionalismo, en otros contextos, en otros entornos, las técnicas, los conocimientos y las formas culturales productivas de la chinampería con todos sus beneficios y bondades.</p>
+          <p>Trabajamos para:</p>
+          <ul>
+            <li>Promover la construcción de conocimientos sobre sistemas de producción sostenibles</li>
+            <li>Evitar la extinción de conocimientos y principios filosóficos que guarda la chinampa</li>
+            <li>Promover espacios de diálogo, discusión e intercambio de saberes y conocimientos</li>
+            <li>Promover el arraigo de los pobladores de xochimilco hacia la cultura lacustre</li>
+          </ul>
+        </div>
+      </div>
+      <div class="page" style="background-color:var(--c_s5_secondary)">
+        <div class="page-wrapper">
+          <p>Contacto:</p>
+          <p>Pedro Mendez</p>
+        </div>
+      </div>
+    </section>
+
   </main>
+  <footer id="main-pages-footer" class="main-pages-footer">
+    <div class="d-flex sm-footer-icons flex-column align-center flex-lg-row">
+      <div class="sm-item">
+        <a href="#"><img src="./assets/img/sm-icons/i-wa-w.svg" alt="whatsapp"></a>
+      </div>
+      <div class="sm-item">
+        <a href="#"><img src="./assets/img/sm-icons/i-ig-w.svg" alt="instagram"></a>
+      </div>
+      <div class="sm-item">
+        <a href="#"><img src="./assets/img/sm-icons/i-tw-w.svg" alt="twitter"></a>
+      </div>
+      <div class="sm-item">
+        <a href="#"><img src="./assets/img/sm-icons/i-fb-w.svg" alt="facebook"></a>
+      </div>
+      <div class="sm-item">
+        <a href="#"><img src="./assets/img/sm-icons/i-yt-w.svg" alt="youtube"></a>
+      </div>
+    </div>
+  </footer>
+
   <nav id="main_nav" data-pushbar-id="main_nav" data-pushbar-direction="left">
     <div class="nav_header">
       <h1>MENÚ</h1>
@@ -164,12 +317,14 @@
       </li>
     </ul>
   </nav>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ8LFxkpI-X7Zd3NF6hXYtMPwQmCyeK0E" charset="utf-8"></script>
-  <script type="text/javascript">
-  var chinampa
-    document.addEventListener('DOMContentLoaded',function(){
-      chinampa = new Chinampayolo();
-    })
+
+  <script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    var chinampa = new Chinampayolo();
+    var slider = new ChinampayoloPageSlider({})
+    var slider = new ChinampayoloPageSlider({})
+  });
   </script>
+
 </body>
 </html>

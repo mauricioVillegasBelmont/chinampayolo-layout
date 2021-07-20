@@ -2,6 +2,7 @@
   @extend %position-relative;
   @extend %display-block;
   text-align: center;
+  padding: 0;
   border: 0;
   background-color: transparent;
   padding: 0;
@@ -12,11 +13,11 @@
   }
 }
 .main_nav_btn{
-  background-color: color_var('base_green');
-  padding: .5rem;
-  width: 2.25rem;
+  width: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
   @include media-breakpoint-up(lg){
-    width: 3rem;
+    width: 2rem;
   }
 }
 .nav_open{
