@@ -94,7 +94,6 @@
 				.col-#{$i} {
 					width: percentage($i / $grid-columns);
 					@include flex(0 0 percentage($i / $grid-columns));
-					@extend %grid-column;
 				}
 			}
 
