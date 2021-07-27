@@ -1,0 +1,54 @@
+// header_styles
+.main_nav_btn{fill:#ffffff;}
+// .header_logo_color{fill:#C19C49;}
+// .main_header_deco path{fill:#C19C49;}
+
+.section_0{
+  .header_logo_color{fill:color_var('gold');}
+  .main_header{background-color: color_var('deep_blue');}
+  .main_header_deco path{fill:color_var('cream');}
+  .page{
+    background-color: color_var('turquoise');
+    &.inicio{
+      background-color: color_var('deep_blue');
+    }
+  }
+}
+.section_1{
+  .header_logo_color{fill:color_var('cream');}
+  .main_header{background-color: color_var('darkorange');}
+  .main_header_deco path{fill:color_var('deep_blue');}
+  .page{
+    background-color: color_var('cream');
+  }
+}
+.section_2{
+  .header_logo_color{fill:color_var('cream');}
+  .main_header{background-color: color_var('electric_blue');}
+  .main_header_deco path{fill:color_var('cream');}
+  .page{
+    background-color: color_var('electric_blue');
+    h1,h2,p,ul{
+      color: color_var('white');
+    }
+  }
+}
+.section_3{
+  .header_logo_color{fill:color_var('cream');}
+  .main_header{background-color: color_var('mediumaquamarine');}
+  .main_header_deco path{fill:color_var('cream');}
+  .page{
+    background-color: color_var('darkgreen');
+  }
+}
+.section_4{
+  .header_logo_color{fill:color_var('cream');}
+  .main_header{background-color: color_var('rebeccapurple');}
+  .main_header_deco path{fill:color_var('cream');}
+  .page{
+    background-color: color_var('yellowgreen');
+    &.inicio{
+      background-color: color_var('cream');
+    }
+  }
+}

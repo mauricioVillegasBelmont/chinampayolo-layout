@@ -1,6 +1,8 @@
 .page{
   @extend %background-center-cover;
   padding: calc(50px + 1.75rem) calc(3vw + 2rem) calc(2vh + 2rem);
+  will-change: background-color;
+  transition: transform 0.4s ease-in-out, background-color 0.5s ease-in-out !important;
   .page-wrapper{
     @extend %display-flex;
     @extend %flex-column;
@@ -38,9 +40,7 @@
   p{
     font-size: 1rem;
     text-align: center;
-    &.white{
-      @extend %color_white;
-    }
+    color: color_var('parragraph_black');
   }
   ul{
     list-style: disc;
@@ -53,6 +53,8 @@
     li{
       text-align: left;
     }
-
+  }
+  img{
+    pointer-events: none;
   }
 }
