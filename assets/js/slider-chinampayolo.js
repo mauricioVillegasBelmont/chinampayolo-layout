@@ -73,6 +73,7 @@ ChinampayoloPageSlider.prototype.init = function () {
       let sectionNavigationButton = this.createElement('input', {
         type: 'radio',
         name: 'sectionScrollButton',
+        id:`sectionId[${index}]`,
         value: index,
         onclick: function (event) {
 
@@ -90,7 +91,7 @@ ChinampayoloPageSlider.prototype.init = function () {
       }, sectionButtonContainer);
 
       // Give some custom style for radio buttons with labels
-      var label = this.createElement('label', { htmlFor: `sectionId[${index}]`,id: `section_label_${index}` }, sectionButtonContainer)
+      var label = this.createElement('label', { htmlFor: `sectionId[${index}]`}, sectionButtonContainer)
       label.dataset.tooltip = 'right';
       label.dataset.title = title;
       label.dataset.html = 'true';
