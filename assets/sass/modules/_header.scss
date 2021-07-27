@@ -9,15 +9,22 @@
   z-index: 1;
   padding: .875rem;
   border-radius: .75rem;
-  max-width: 350px;
+  max-width: calc(100% - 1.5rem);
   overflow: hidden;
+  will-change: background-color;
+  transition: background-color 0.4s ease-in-out;
 
-
-
-  background-color: #032238;
+  @include media-breakpoint-up(md){
+    margin: .75rem auto 0;
+  }
   @include media-breakpoint-up(lg){
-    padding: 1.5rem;
+    // padding: 1.5rem;
+    max-width: 850px;
     border-radius: .75rem;
+  }
+  .main_logo{
+    max-width: 350px;
+    margin: 0 auto;
   }
   .main_header_deco{
     @extend %position-absolute;
@@ -27,6 +34,8 @@
     width: 100%;
     pointer-events: none;
     user-select: none;
+    will-change: fill;
+    transition: fill 0.4s ease-in-out;
     &.h_deco_l{
       @extend %left-0;
       @extend %right-auto;
@@ -62,8 +71,3 @@
     }
   }
 }
-
-// header_styles
-.main_nav_btn{fill:#ffffff;}
-.header_logo_color{fill:#C19C49;}
-.main_header_deco path{fill:#C19C49;}

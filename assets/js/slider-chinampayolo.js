@@ -7,6 +7,7 @@ function ChinampayoloPageSlider(options = {}) {
   this.sections = options.sectionClass ? document.getElementsByClassName(options.sectionClass) : document.getElementsByTagName('section')
   this.pageClass = options.pageClass ? options.pageClass : 'page'
 
+
   this.pagesPerSection = []
   this.currentPage = []
   this.currentSection = 0
@@ -39,9 +40,12 @@ function ChinampayoloPageSlider(options = {}) {
     differenceX: null,
     differenceY: null
   }
+  this.tooltip = document.getElementById('tooltip');
 
-  this.init()
-  this.setupEventListeners()
+  this.init();
+  this.setupEventListeners();
+  this.color_pallete();
+  this.tooltips();
 }
 ChinampayoloPageSlider.prototype.init = function () {
 
@@ -49,6 +53,7 @@ ChinampayoloPageSlider.prototype.init = function () {
 
   // Create elements for every section and apply styles
   for (let index = 0; index < this.sections.length; index++) {
+    var that = this;
 
     // Count and add page Starting position for every section
     this.translate.page[index] = 0
@@ -56,18 +61,18 @@ ChinampayoloPageSlider.prototype.init = function () {
     this.pagesPerSection[index] = this.sections[index].getElementsByClassName(this.pageClass)
 
     // Apply background color for section
-    if (this.options.colors) {
-      this.sections[index].style.background = this.options.colors[index] ? this.options.colors[index] : 'white'
-    }
+    // if (this.options.colors) {
+    //   this.sections[index].style.background = this.options.colors[index] ? this.options.colors[index] : 'white'
+    // }
 
     // We need to be sure that there is more then 1 section before creating navigation
     if (this.sections.length > 1) {
+      var title = that.sections[index].dataset.title;
 
       // Create radio button for every section
       let sectionNavigationButton = this.createElement('input', {
         type: 'radio',
         name: 'sectionScrollButton',
-        id: `sectionId[${index}]`,
         value: index,
         onclick: function (event) {
 
@@ -82,10 +87,14 @@ ChinampayoloPageSlider.prototype.init = function () {
         style: {
           display: 'none'
         }
-      }, sectionButtonContainer)
+      }, sectionButtonContainer);
 
       // Give some custom style for radio buttons with labels
-      this.createElement('label', { htmlFor: sectionNavigationButton.id }, sectionButtonContainer)
+      var label = this.createElement('label', { htmlFor: `sectionId[${index}]`,id: `section_label_${index}` }, sectionButtonContainer)
+      label.dataset.tooltip = 'right';
+      label.dataset.title = title;
+      label.dataset.html = 'true';
+
 
     }
 
@@ -104,7 +113,6 @@ ChinampayoloPageSlider.prototype.init = function () {
           value: i,
           checked: this.currentPage[i] === i,
           onclick: function (event) {
-
             if (this.waitAnimation) {
               return event.preventDefault()
             } else {
@@ -115,10 +123,13 @@ ChinampayoloPageSlider.prototype.init = function () {
           style: {
             display: 'none'
           }
-        }, pageButtonContainer)
+        }, pageButtonContainer);
 
         // Give some custom style for radio buttons with labels
-        this.createElement('label', { htmlFor: `page[${index}][${i}]` }, pageButtonContainer)
+        var label = this.createElement('label', { htmlFor: `page[${index}][${i}]` }, pageButtonContainer);
+        label.dataset.tooltip = 'top';
+        label.dataset.title = `pagina ${(i+1)}`;
+        label.dataset.html = 'true';
 
       }
       // Align container to center, because we never know how wide container will be after all buttons added
@@ -171,6 +182,7 @@ ChinampayoloPageSlider.prototype.switchAndTranslateSection = function(swipeOrCli
   this.isDragging = false
   this.height = 100
 
+  this.color_pallete();
   // Animate/translate sections
   for (let index = 0; index < this.sections.length; index++) {
     this.sections[index].style.transform = `translateY(${this.translate.section}%)`
@@ -403,4 +415,27 @@ ChinampayoloPageSlider.prototype.gotoSection = function(index = false){
   console.log(index);
   if (index === false || typeof index != 'number')  return;
   this.switchAndTranslateSection(index);
+}
+ChinampayoloPageSlider.prototype.color_pallete = function () {
+  var c_pallete = 'section_'+this.currentSection;
+  var body = document.body;
+  body.classList.remove('section_0', 'section_1', 'section_2', 'section_3', 'section_4');
+  body.classList.add(c_pallete);
+
+};
+ChinampayoloPageSlider.prototype.tooltips = function () {
+  tippy('[data-tooltip="right"]',{
+    content(reference) {
+      let _content = reference.getAttribute('data-title');
+      return _content;
+    },
+    placement: 'right',
+  });
+  tippy('[data-tooltip="top"]',{
+    content(reference) {
+      let _content = reference.getAttribute('data-title');
+      return _content;
+    },
+    placement: 'top',
+  });
 }
