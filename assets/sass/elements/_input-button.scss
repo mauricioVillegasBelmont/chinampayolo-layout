@@ -1,4 +1,4 @@
-.btn {
+.btn,.nav-control-btn {
   @extend %position-relative;
   @extend %display-block;
   text-align: center;
@@ -10,6 +10,10 @@
   img,svg{
     width: 100%;
     height: auto;
+  }
+  img,svg{
+    pointer-events: none;
+    user-select: none;
   }
 }
 .main_nav_btn{
