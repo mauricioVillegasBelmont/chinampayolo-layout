@@ -41,11 +41,14 @@ function ChinampayoloPageSlider(options = {}) {
     differenceY: null
   }
   this.tooltip = document.getElementById('tooltip');
+  this.nav_btns = document.getElementsByClassName('nav-control-btn');
+
 
   this.init();
   this.setupEventListeners();
   this.color_pallete();
   this.tooltips();
+  this.nabButton_manager();
 }
 ChinampayoloPageSlider.prototype.init = function () {
 
@@ -188,7 +191,7 @@ ChinampayoloPageSlider.prototype.switchAndTranslateSection = function(swipeOrCli
   for (let index = 0; index < this.sections.length; index++) {
     this.sections[index].style.transform = `translateY(${this.translate.section}%)`
   }
-  // console.log('vertical | switchAndTranslateSection',this.currentPage,this.translate);
+  this.nabButton_manager();
   // Complete previous animation before calling next
   setTimeout(() => {
     this.waitAnimation = false
@@ -234,6 +237,7 @@ ChinampayoloPageSlider.prototype.switchAndTranslatePage = function(swipeOrClick)
   for (let index = 0; index < this.pagesPerSection[this.currentSection].length; index++) {
     this.pagesPerSection[this.currentSection][index].style.transform = `translateX(${this.translate.page[this.currentSection]}%)`
   }
+  this.nabButton_manager();
   // Complete previous animation before calling next
   setTimeout(() => {
     this.waitAnimation = false
@@ -398,6 +402,7 @@ ChinampayoloPageSlider.prototype.createElement  = function(tag, options, parent)
 }
 
 ChinampayoloPageSlider.prototype.setupEventListeners = function() {
+  var that = this;
   window.onwheel = this.switchAndTranslateSection.bind(this)
   window.onmousedown = this.touchStart.bind(this)
   window.onmousemove = this.touchMove.bind(this)
@@ -406,6 +411,14 @@ ChinampayoloPageSlider.prototype.setupEventListeners = function() {
   window.ontouchmove = this.touchMove.bind(this)
   window.ontouchend = this.touchEnd.bind(this)
   window.onkeyup = this.swipeWithKeyboard.bind(this)
+  // nav buttons
+  for (var i = 0; i < this.nav_btns.length; i++) {
+    this.nav_btns[i].addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      that.navControls(this);
+    });
+  }
 }
 
 ChinampayoloPageSlider.prototype.handleError = function(string, error) {
@@ -413,7 +426,6 @@ ChinampayoloPageSlider.prototype.handleError = function(string, error) {
 }
 
 ChinampayoloPageSlider.prototype.gotoSection = function(index = false){
-  console.log(index);
   if (index === false || typeof index != 'number')  return;
   this.switchAndTranslateSection(index);
 }
@@ -439,4 +451,32 @@ ChinampayoloPageSlider.prototype.tooltips = function () {
     },
     placement: 'top',
   });
+}
+ChinampayoloPageSlider.prototype.navControls = function(obj){
+  if (!this.waitAnimation) {
+    this.switchAndTranslatePage(obj.value);
+    this.switchAndTranslateSection(obj.value);
+  }
+}
+ChinampayoloPageSlider.prototype.nabButton_manager = function(){
+  if ( this.pagesPerSection[this.currentSection].length == (this.currentPage[this.currentSection]+1) ) {
+    this.nav_btns.namedItem('nav-control-right').classList.add('disabled');
+  } else {
+    this.nav_btns.namedItem('nav-control-right').classList.remove('disabled');
+  }
+  if (this.currentPage[this.currentSection] == 0) {
+      this.nav_btns.namedItem('nav-control-left').classList.add('disabled');
+  }else {
+    this.nav_btns.namedItem('nav-control-left').classList.remove('disabled');
+  }
+  if (this.pagesPerSection.length == (this.currentSection+1)) {
+    this.nav_btns.namedItem('nav-control-bottom').classList.add('disabled');
+  }else {
+    this.nav_btns.namedItem('nav-control-bottom').classList.remove('disabled');
+  }
+  if (this.currentSection == 0) {
+    this.nav_btns.namedItem('nav-control-top').classList.add('disabled');
+  }else {
+    this.nav_btns.namedItem('nav-control-top').classList.remove('disabled');
+  }
 }

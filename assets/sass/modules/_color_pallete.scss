@@ -13,6 +13,7 @@
       background-color: color_var('deep_blue');
     }
   }
+  .nav-dir{fill:color_var('cyan');}
 }
 .section_1{
   .header_logo_color{fill:color_var('cream');}
@@ -21,6 +22,7 @@
   .page{
     background-color: color_var('cream');
   }
+  .nav-dir{fill:color_var('mediumaquamarine');}
 }
 .section_2{
   .header_logo_color{fill:color_var('cream');}
@@ -32,6 +34,7 @@
       color: color_var('white');
     }
   }
+  .nav-dir{fill:color_var('turquoise');}
 }
 .section_3{
   .header_logo_color{fill:color_var('cream');}
@@ -40,6 +43,7 @@
   .page{
     background-color: color_var('darkgreen');
   }
+  .nav-dir{fill:color_var('rebeccapurple');}
 }
 .section_4{
   .header_logo_color{fill:color_var('cream');}
@@ -51,4 +55,5 @@
       background-color: color_var('cream');
     }
   }
+  .nav-dir{fill:color_var('electric_blue');}
 }
