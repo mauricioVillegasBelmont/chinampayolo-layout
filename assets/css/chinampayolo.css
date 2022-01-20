@@ -337,10 +337,10 @@
   background-size: cover;
   background-position: center; }
 
-.container, .container-body, .p-relative, #main_nav .nav_list li, .btn, .nav-control-btn {
+.container, .container-body, .p-relative, .page, #main_nav .nav_list li, .btn, .nav-control-btn {
   position: relative; }
 
-.p-absolute, .main_header .main_header_deco, #main_nav .nav_list li::after, .nav-control .dir {
+.p-absolute, .main_header .main_header_deco, .page .page-bg, #main_nav .nav_list li::after, .nav-control .dir {
   position: absolute; }
 
 .p-fixed, .main_header, .main-pages-footer, .nav-control {
@@ -581,25 +581,25 @@ body img, body svg, .container, .container-body {
 .container-fluid, .container, .container-body {
   margin: 0 auto; }
 
-.main_header, .main_header .main_header_deco.h_deco_l, .main_header .main_header_deco.h_deco_r, .main_header .main_header_deco.v_deco_t, .nav-control .dir.center, .nav-control .dir.top, .nav-control .dir.right, .nav-control .dir.left {
+.page .page-bg, .main_header, .main_header .main_header_deco.h_deco_l, .main_header .main_header_deco.h_deco_r, .main_header .main_header_deco.v_deco_t, .nav-control .dir.center, .nav-control .dir.top, .nav-control .dir.right, .nav-control .dir.left {
   top: 0; }
 
 .main_header .main_header_deco.v_deco_b, .main-pages-footer, .nav-control, .nav-control .dir.bottom {
   top: auto; }
 
-.main_header, .main_header .main_header_deco.h_deco_l, .main_header .main_header_deco.v_deco_b, .main_header .main_header_deco.v_deco_t, .nav-control, .nav-control .dir.center, .nav-control .dir.top, .nav-control .dir.bottom, .nav-control .dir.left {
+.page .page-bg, .main_header, .main_header .main_header_deco.h_deco_l, .main_header .main_header_deco.v_deco_b, .main_header .main_header_deco.v_deco_t, .nav-control, .nav-control .dir.center, .nav-control .dir.top, .nav-control .dir.bottom, .nav-control .dir.left {
   left: 0; }
 
 .main_header .main_header_deco.h_deco_r, .main-pages-footer, .nav-control .dir.right {
   left: auto; }
 
-.main_header .main_header_deco.h_deco_l, .main_header .main_header_deco.h_deco_r, .main_header .main_header_deco.v_deco_b, .main-pages-footer, .nav-control .dir.center, .nav-control .dir.right, .nav-control .dir.bottom, .nav-control .dir.left {
+.page .page-bg, .main_header .main_header_deco.h_deco_l, .main_header .main_header_deco.h_deco_r, .main_header .main_header_deco.v_deco_b, .main-pages-footer, .nav-control .dir.center, .nav-control .dir.right, .nav-control .dir.bottom, .nav-control .dir.left {
   bottom: 0; }
 
 .main_header .main_header_deco.v_deco_t, .nav-control .dir.top {
   bottom: auto; }
 
-.main_header, .main_header .main_header_deco.h_deco_r, .main_header .main_header_deco.v_deco_b, .main_header .main_header_deco.v_deco_t, .main-pages-footer, .nav-control, .nav-control .dir.center, .nav-control .dir.top, .nav-control .dir.right, .nav-control .dir.bottom {
+.page .page-bg, .main_header, .main_header .main_header_deco.h_deco_r, .main_header .main_header_deco.v_deco_b, .main_header .main_header_deco.v_deco_t, .main-pages-footer, .nav-control, .nav-control .dir.center, .nav-control .dir.top, .nav-control .dir.right, .nav-control .dir.bottom {
   right: 0; }
 
 .main_header .main_header_deco.h_deco_l, .nav-control .dir.left {
@@ -996,10 +996,20 @@ body {
   padding: calc(50px + 1.75rem) calc(3vw + 2rem) calc(2vh + 2rem);
   will-change: background-color;
   transition: transform 0.4s ease-in-out, background-color 0.5s ease-in-out !important; }
+  .page .page-bg {
+    width: 100%;
+    height: 100%;
+    z-index: 0; }
+    .page .page-bg, .page .page-bg > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center; }
   .page .page-wrapper {
     height: 100%;
     width: 100%;
-    max-width: 100%; }
+    max-width: 100%;
+    z-index: 1; }
     @media (min-width: 992px) {
       .page .page-wrapper {
         max-width: 890px; } }
